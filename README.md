@@ -208,12 +208,12 @@ Teknik One-Hot Encoding dipilih untuk alasan berikut:
   **_Tabel 2. Hasil Encoding_**
 
   |   | Unit price | Quantity |  Total  | Branch_A | Branch_B | Branch_C | Customer type_Member | Customer type_Normal | Gender_Female | Gender_Male |  Product line_Electronic accessories  | Product line_Fashion accessories | Product line_Food and beverages | Product line_Health and beauty | Product line_Home and lifestyle | Product line_Sports and travel | Payment_Cash | Payment_Credit card | Payment_Ewallet |
-|---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| 0 | 74.69 | 7 | 548.9715 | 1 | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
-| 1 | 15.28 | 5 | 80.2200 | 0 | 0 | 1 | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |
-| 2 | 46.33 | 7 | 340.5255 | 1 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 0 |
-| 3 | 58.22 | 8 | 489.0480 | 1 | 0 | 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
-| 4 | 86.31 | 7 | 634.3785 | 1 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 |
+  |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
+  | 0 | 74.69 | 7 | 548.9715 | 1 | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
+  | 1 | 15.28 | 5 | 80.2200 | 0 | 0 | 1 | 0 | 1 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 |
+  | 2 | 46.33 | 7 | 340.5255 | 1 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 | 0 |
+  | 3 | 58.22 | 8 | 489.0480 | 1 | 0 | 0 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 1 |
+  | 4 | 86.31 | 7 | 634.3785 | 1 | 0 | 0 | 0 | 1 | 0 | 1 | 0 | 0 | 0 | 0 | 0 | 1 | 0 | 0 | 1 |
   
 - Melakukan Reduksi menggunakan teknik PCA, diperlukan untuk mereduksi variabel asli menjadi sejumlah kecil variabel baru yang tidak berkorelasi linier, disebut komponen utama (PC). Komponen utama ini dapat menangkap sebagian besar varians dalam variabel asli. Sehingga, saat teknik PCA diterapkan pada data, ia hanya akan menggunakan komponen utama dan mengabaikan sisanya.
 Teknik PCA dipilih karena:
