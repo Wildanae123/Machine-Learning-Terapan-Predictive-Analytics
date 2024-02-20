@@ -82,7 +82,7 @@ Link: [Supermarket sales](https://www.kaggle.com/datasets/aungpyaeap/supermarket
 - Gross income: Gross income
 - Rating: Customer stratification rating on their overall shopping experience (On a scale of 1 to 10)
 
-![Informasi dari dataset](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/blob/main/images/Informasi%20dari%20dataset.png)
+![Informasi dari dataset](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/0635564d-a07e-43a5-83b3-0890bf41a05c)
 
 **_Gambar 1. Informasi dari dataset_**
 
@@ -102,7 +102,7 @@ Ada beberapa teknik untuk menangani outliers, antara lain:
 
 Untuk mengecek apakah ada outliers atau tidak, dapat menggunakan teknik visualisasi boxplot. Dengan boxplot ukuran lokasi dan penyebaran, serta informasi tentang simetri dan outliers bisa digambarkan secara vertikal maupun horizontal.
 
-![Visualisasi boxplot](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/blob/main/images/Visualisasi%20boxplot.png)
+![Visualisasi boxplot](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/fdd7a17c-acba-498b-b32d-a87cf5d1a0cc)
 
 **_Gambar 2. Visualisasi boxplot_**
 
@@ -116,13 +116,13 @@ Batas atas = Q3 + 1.5 * IQR
 
 Menghasilkan output sebagai berikut:
 
-![Outliner](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/blob/main/images/Outliner.png)
+![Outliner](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/10f693a6-351a-44f8-bba5-3ca042bd4b43)
 
 **_Gambar 3. Outliner_**
 
 #### Memahami data dengan statistics
 
-![Deskripsi Variabel](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/blob/main/images/Deskripsi%20Variabel.png)
+![Deskripsi Variabel](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/704f9204-e5d5-465e-b8d0-f08f05e79247)
 
 **_Gambar 4. Deskripsi Variabel_**
 
@@ -139,7 +139,7 @@ Fungsi describe() memberikan informasi statistik pada masing-masing kolom, antar
 #### Memahami data dengan visualization menggunakan teknik Univariate Analysis
 ##### Categorical Features
 
-![Univariate Analysis Categorical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/blob/main/images/Univariate%20Analysis%20Categorical%20Features.png)
+![Univariate Analysis Categorical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/e93d1f0b-0aad-498a-9593-38dd7907d4fe)
 
 **_Gambar 5. Univariate Analysis Categorical Features_**
 
@@ -152,7 +152,7 @@ Berdasarkan deskripsi variabel di atas, kita bisa memperoleh beberapa informasi,
 
 ##### Numerical Features
 
-![Univariate Analysis Numerical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/blob/main/images/Univariate%20Analysis%20Numerical%20Features.png)
+![Univariate Analysis Numerical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/ac77ce45-0b74-4bfc-8cda-868923dd8009)
 
 **_Gambar 6. Univariate Analysis Numerical Features_**
 
@@ -166,7 +166,7 @@ Mari amati histogram di atas, khususnya histogram untuk variabel "Total" yang me
 #### Memahami data dengan visualization menggunakan teknik Multivariate Analysis
 ##### Categorical Features
 
-![Multivariate Analysis Categorical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/blob/main/images/Multivariate%20Analysis%20Categorical%20Features.png)
+![Multivariate Analysis Categorical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/ff6a596b-20f5-485b-b953-8027ada97538)
 
 **_Gambar 7. Multivariate Analysis Categorical Features_**
 
@@ -181,7 +181,7 @@ Dengan mengamati rata-rata Total relatif terhadap fitur kategori di atas, kita m
   
 ##### Numerical Features
 
-![Multivariate Analysis Numerical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/blob/main/images/Multivariate%20Analysis%20Numerical%20Features.png)
+![Multivariate Analysis Numerical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/d2d34e8e-9436-4ecd-8259-a603c15af2e1)
 
 **_Gambar 8. Multivariate Analysis Numerical Features_**
 
@@ -189,7 +189,7 @@ Pada kasus ini, kita akan melihat relasi antara semua fitur numerik dengan fitur
 
 Pada pola sebaran data grafik pairplot sebelumnya, terlihat 'Quantity' memiliki korelasi yang tinggi dengan fitur 'Total'. Sedangkan fitur lainnya yaitu 'Rating' terlihat memiliki korelasi yang lemah karena sebarannya tidak membentuk pola. Untuk mengevaluasi skor korelasinya, gunakan fungsi corr().
 
-![/assets/images/Correlation Matriks.png](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/blob/main/images/Correlation%20Matriks.png)
+![Correlation Matriks](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/c2ef09db-c51a-48e5-9b43-3762a637d0e5)
 
 **_Gambar 9. Correlation Matriks_**
 
@@ -221,8 +221,8 @@ Teknik PCA dipilih karena:
   - Efektivitas: Teknik ini efektif dalam mengurangi dimensi data tanpa kehilangan informasi signifikan.
   - Kemampuan Interpretability: Teknik ini menghasilkan komponen utama yang mudah diinterpretasikan.
   - Kestabilan: Teknik ini stabil dan tidak sensitif terhadap outlier.
-
-  ![Hasil Reduksi](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/blob/main/images/Hasil%20Reduksi.png)
+  
+  ![Hasil Reduksi](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/c7f7b291-fb12-43ad-b445-5d312f0613b3)
 
   **_Gambar 10. Hasil Reduksi_**
   
@@ -233,7 +233,7 @@ Teknik PCA dipilih karena:
   - test_size adalah ukuran pembagian dataset yaitu sekitar 80 % untuk training dan 20 % untuk testing, data testing ini bertujuan untuk mengukur kinerja model pada data baru.
   - random_state: digunakan untuk mengontrol random number generator yang digunakan, di proyek ini menggunakan random_state = 123
   
-  ![Hasil Data Splitting](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/blob/main/images/Hasil%20Data%20Splitting.png)
+  ![Hasil Data Splitting](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/fbf3c93c-997a-4d2c-b3b3-2e92465a8d20)
 
   **_Gambar 11. Hasil Data Splitting_**
 
@@ -244,7 +244,7 @@ Metode StandarScaler dipilih karena:
   - Kemampuan Scaling: Teknik ini menghasilkan data dengan standar deviasi 1 dan mean 0, yang membantu meningkatkan performa algoritma machine learning.
   - Kestabilan: Teknik ini stabil dan tidak sensitif terhadap outlier.
 
-  ![Hasil Standarisasi](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/blob/main/images/Hasil%20Standarisasi.png)
+  ![Hasil Standarisasi](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/a052106e-58ba-4340-8db4-6b19350d0d7b)
 
   **_Gambar 12. Hasil Standarisasi_**
 
@@ -317,7 +317,7 @@ Sensitif terhadap outlier dan noise.
 **Pemilihan Model::**
 Pemilihan parameter yang optimal untuk setiap algoritma sangat penting untuk mencapai performa terbaik. Dari keempat model yang telah dilatih, terlihat bahwa prediksi dengan K-Nearest Neighbor memberikan hasil yang paling mendekati. Sehingga **K-Nearest Neighbor** merupakan model terbaik yang dihasilkan. Hal ini didasarkan pada hasil uji pada gambar berikut:
 
-![Visualisasi bar chart MSE](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/blob/main/images/Visualisasi%20bar%20chart%20MSE.png)
+![Visualisasi bar chart MSE](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/fcb330e2-6413-41db-a7fa-f6538908847c)
 
 **_Gambar 13. Visualisasi bar chart MSE_**
 
@@ -335,7 +335,7 @@ Nilai MSE memiliki beberapa signifikansi, antara lain:
 
 MSE didefinisikan dalam persamaan berikut
 
-![Perhitungan MSE](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/blob/main/images/Perhitungan%20MSE.jpeg)
+![Perhitungan MSE](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/d270e4f2-d9ca-49f9-8658-e6d3a95476e7)
 
 **_Gambar 14. Perhitungan MSE_**
 
@@ -359,7 +359,7 @@ Hasil evaluasi pada data latih dan data test adalah sebagai berikut.
 
 Untuk memudahkan, mari kita plot matrik tersebut dengan bar chart
 
-![Visualisasi bar chart MSE](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/blob/main/images/Visualisasi%20bar%20chart%20MSE.png)
+![Visualisasi bar chart MSE](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/f84f41a2-f667-4cac-980d-153771b5fc7b)
 
 **_Gambar 15. Visualisasi bar chart MSE_**
 
