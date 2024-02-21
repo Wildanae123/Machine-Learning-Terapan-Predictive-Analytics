@@ -38,10 +38,10 @@ Berdasarkan tujuan yang telah dipaparkan diatas, maka proyek penelitian ini memi
   - Mengidentifikasi kemacetan, mengoptimalkan alokasi sumber daya, dan meningkatkan efisiensi alur kerja.
   - Mengevaluasi pengurangan waktu siklus, biaya penyimpanan inventaris, dan biaya operasional.
   - Algoritma yang akan dipakai diantaranya adalah sebagai berikut:
-  - K-Nearest Neighbors (KNN)
-  - Adaptive Boosting (Adaboost)
-  - Random Forest
-  - Support Vector Machine (SVM)
+  - _K-Nearest Neighbors_ (KNN)
+  - _Adaptive Boosting_ (Adaboost)
+  - _Random Forest_ (RF)
+  - _Support Vector Machine_ (SVM)
 
 3. Evaluasi Model Analisis Prediktif untuk Perkiraan Permintaan
   - Memperkirakan permintaan produk di masa depan.
@@ -158,7 +158,7 @@ Untuk mengecek apakah ada outliers atau tidak, dapat menggunakan teknik visualis
 **_Gambar 2. Visualisasi boxplot_**
 
 Penanganan Outliers
-Pada proyek ini , terdapat outliers variabel total, untuk menangani outliers kita dapat menggunakan teknik IQR method, IQR adalah singkatan dari Interquartile Range.
+Pada proyek ini , terdapat outliers variabel total, untuk menangani outliers gunakan teknik IQR method, IQR adalah singkatan dari Interquartile Range.
 Menggunakan persamaan berikut:
 
 Batas bawah = Q1 - 1.5 * IQR
@@ -178,7 +178,7 @@ Menghasilkan output sebagai berikut:
 
 **_Gambar 5. Univariate Analysis Categorical Features_**
 
-Berdasarkan deskripsi variabel di atas, kita bisa memperoleh beberapa informasi, antara lain:
+Berdasarkan deskripsi variabel di atas, bisa diperoleh beberapa informasi, antara lain:
 - Kategori branch dari yang paling banyak ke yang paling sedikit adalah A, B, dan C.
 - Kategori customer type dari yang paling banyak ke yang paling sedikit adalah member dan kemudian normal.
 - Kategori gender dari yang paling banyak ke yang paling sedikit adalah female dan kemudian male.
@@ -203,7 +203,7 @@ Berdasarkan histogram di atas, bisa diperoleh beberapa informasi, antara lain:
   - Distribusi Quantity lebih simetris.
 
 - Histogram untuk variabel **"Total"** yang merupakan fitur target (label) pada data yang nanti akan dilakukan prediksi, antara lain:
-  - Peningkatan harga barang sebanding dengan penurunan jumlah sampel, Hal ini dapat kita lihat jelas dari histogram "Total" yang grafiknya mengalami penurunan seiring dengan semakin banyaknya jumlah sampel (sumbu x).
+  - Peningkatan harga barang sebanding dengan penurunan jumlah sampel, Hal ini dapat terlihat jelas dari histogram "Total" yang grafiknya mengalami penurunan seiring dengan semakin banyaknya jumlah sampel (sumbu x).
   - Rentang harga barang termasuk pajak yang dibeli per pelanggan mulai dari terendah 10.6785 hingga tertinggi 1042.65.
   - Setengah harga barang dibeli di bawah harga 200.
   - Distribusi Total miring ke kanan (right-skewed). Hal ini akan berimplikasi pada model dimana data lebih terkonsentrasi pada satu sisi mean dibandingkan sisi lainnya yang dapat memengaruhi akurasi dan interpretasi model.
@@ -216,18 +216,37 @@ Berdasarkan histogram di atas, bisa diperoleh beberapa informasi, antara lain:
 #### Memahami data dengan visualization menggunakan teknik Multivariate Analysis
 ##### Categorical Features
 
-![Multivariate Analysis Categorical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/ff6a596b-20f5-485b-b953-8027ada97538)
+![Multivariate Analysis Categorical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/63f0fbef-e35b-43fe-8180-d860d003ef7c)
 
 **_Gambar 7. Multivariate Analysis Categorical Features_**
 
-Dengan mengamati rata-rata Total relatif terhadap fitur kategori di atas, kita memperoleh insight sebagai berikut:
+Dengan mengamati rata-rata Total relatif terhadap fitur kategori di atas, dapat diperoleh insight sebagai berikut:
 
-- Pada fitur ‘branch’, rata rata Total cenderung mirip rentangnya berada antara 5 hingga 6. grade tertinggi yaitu grade ideal memiliki harga rata-rata terendah diantara grade lainnya. sehingga, fitur **branch** memiliki pengaruh atau dampak yang kecil terhadap rata-rata Total.
-- Pada fitur ‘customer type’, rata rata Total cenderung mirip rentangnya berada antara 5 hingga 6. grade tertinggi yaitu grade ideal memiliki harga rata-rata terendah diantara grade lainnya. sehingga, fitur **customer type** memiliki pengaruh atau dampak yang kecil terhadap rata-rata Total.
-- Pada fitur ‘gender’, rata rata Total memiliki perbedaan yang cukup signifikan terhadap female di rentang 6 hingga 7 dengan male yang hanya berada di rentang 5 hingga 6, sehingga fitur **gender** memiliki pengaruh atau dampak yang besar terhadap rata rata Total.
-- Pada fitur ‘product line’, rata rata Total cenderung mirip rentangnya berada antara 5 hingga 6. grade tertinggi yaitu grade ideal memiliki harga rata-rata terendah diantara grade lainnya. sehingga, fitur **product line** memiliki pengaruh atau dampak yang kecil terhadap rata-rata Total.
-- Pada fitur ‘payment’, rata rata Total cenderung mirip rentangnya berada antara 5 hingga 6. grade tertinggi yaitu grade ideal memiliki harga rata-rata terendah diantara grade lainnya. sehingga, fitur **payment** memiliki pengaruh atau dampak yang kecil terhadap rata-rata Total.
-- Kesimpulan akhir, fitur kategori memiliki pengaruh yang rendah terhadap Total pada Fitur branch, customer type, product line, dan payment tetapi memiliki pengaruh tinggi terhadap **gender**
+- Pada fitur **'Branch'**,
+  - Rata-rata "Total" barang tertinggi terdapat pada 'Branch B' dengan produk "Health and beauty".
+  - 'Branch A' memiliki rata-rata penjualan "Total" terendah.
+  - Terdapat perbedaan "Total" jenis produk yang terjual di berbagai cabang.
+  
+- Pada fitur **'customer type'**,
+  - Rata-rata "Total" tertinggi terdapat pada pelanggan "Member".
+  - Pelanggan "Member" paling banyak membeli product "Health and beauty".
+  - Pelanggan "Normal" paling banyak membeli product "Sports and travel".  
+
+- Pada fitur **'gender'**,
+  - Rata-rata "Total" perempuan lebih tinggi daripada pria.
+  - Gender "Female" paling banyak membeli product "Home and lifestyle".
+  - Gender "Male" paling banyak membeli product "Health and beauty".
+
+- Pada fitur **'product line'**,
+  - Rata-rata "Total" tertinggi terdapat pada lini produk "Home and lifestyle".
+  - Lini produk "Fashion accessories" memiliki rata-rata "Total" terendah.
+
+- Pada fitur **'payment'**,
+  - Rata-rata "Total" tertinggi terdapat pada metode pembayaran "Cash payment".
+  - Pembayaran "Credit card" memiliki rata-rata "Total" terendah.
+  - Lini produk "Sports and travel" memiliki rata-rata "Total" tertinggi pada metode pembayaran "Ewallet" dan "Credit card".
+
+- Kesimpulan akhir, fitur kategori memiliki pengaruh yang rendah terhadap Total pada Fitur branch, customer type, product line, dan payment.
   
 ##### Numerical Features
 
@@ -235,7 +254,7 @@ Dengan mengamati rata-rata Total relatif terhadap fitur kategori di atas, kita m
 
 **_Gambar 8. Multivariate Analysis Numerical Features_**
 
-Pada kasus ini, kita akan melihat relasi antara semua fitur numerik dengan fitur target kita yaitu ‘Total’. Untuk membacanya, perhatikan fitur pada sumbu y, temukan fitur target ‘Total’, dan lihatlah grafik relasi antara semua fitur pada sumbu x dengan fitur price pada sumbu y. Dalam hal ini, kita cukup melihat relasi antar fitur numerik dengan fitur target ‘Total’ pada baris tersebut saja.
+Pada kasus ini, relasi antara semua fitur numerik dengan fitur target yaitu ‘Total’. Untuk membacanya, perhatikan fitur pada sumbu y, temukan fitur target ‘Total’, dan lihatlah grafik relasi antara semua fitur pada sumbu x dengan fitur price pada sumbu y. Dalam hal ini, dengan melihat relasi antar fitur numerik dengan fitur target ‘Total’ pada baris tersebut saja.
 
 Pada pola sebaran data grafik pairplot sebelumnya, terlihat 'Quantity' memiliki korelasi yang tinggi dengan fitur 'Total'. Sedangkan fitur lainnya yaitu 'Rating' terlihat memiliki korelasi yang lemah karena sebarannya tidak membentuk pola. Untuk mengevaluasi skor korelasinya, gunakan fungsi corr().
 
@@ -243,7 +262,7 @@ Pada pola sebaran data grafik pairplot sebelumnya, terlihat 'Quantity' memiliki 
 
 **_Gambar 9. Correlation Matriks_**
 
-Pada grafik korelasi di atas. Jika kita amati, fitur 'Quantity' memiliki skor korelasi yang besar (di atas 0.1) dengan fitur target 'Total'. Artinya, fitur 'Quantity' berkorelasi tinggi dengan keempat fitur tersebut. Sementara itu, fitur 'Rating' memiliki korelasi yang sangat kecil (-0.04). Sehingga, fitur tersebut dapat di-drop.
+Pada grafik korelasi di atas. Jika diamati, fitur 'Quantity' memiliki skor korelasi yang besar (di atas 0.1) dengan fitur target 'Total'. Artinya, fitur 'Quantity' berkorelasi tinggi dengan keempat fitur tersebut. Sementara itu, fitur 'Rating' memiliki korelasi yang sangat kecil (-0.04). Sehingga, fitur tersebut dapat di-drop.
 
 ## Data Preparation
 Pada bagian ini penerapan dan menyebutkan teknik data preparation yang dilakukan. Teknik yang digunakan pada notebook dan laporan harus berurutan.
@@ -276,7 +295,7 @@ Teknik PCA dipilih karena:
 
   **_Gambar 10. Hasil Reduksi_**
   
-- Melakukan Data Splitting, membagi dataset menjadi data latih (train) dan data uji (test) merupakan hal yang harus kita lakukan sebelum membuat model. Kita perlu mempertahankan sebagian data yang ada untuk menguji seberapa baik generalisasi model terhadap data baru. Ketahuilah bahwa setiap transformasi yang kita lakukan pada data juga merupakan bagian dari model. Karena data uji (test set) berperan sebagai data baru, kita perlu melakukan semua proses transformasi dalam data latih. Inilah alasan mengapa langkah awal adalah membagi dataset sebelum melakukan transformasi apa pun. Tujuannya adalah agar kita tidak mengotori data uji dengan informasi yang kita dapat dari data latih dengan parameter yang digunakan yaitu :
+- Melakukan Data Splitting, membagi dataset menjadi data latih (train) dan data uji (test) merupakan hal yang harus dilakukan sebelum membuat model. Dengan mempertahankan sebagian data yang ada untuk menguji seberapa baik generalisasi model terhadap data baru. Ketahuilah bahwa setiap transformasi yang dilakukan pada data juga merupakan bagian dari model. Karena data uji (test set) berperan sebagai data baru, perlu dilakukan semua proses transformasi dalam data latih. Inilah alasan mengapa langkah awal adalah membagi dataset sebelum melakukan transformasi apa pun. Tujuannya adalah agar tidak mengotori data uji dengan informasi yang didapat dari data latih dengan parameter yang digunakan yaitu :
 
   - X berfungsi untuk menghapus kolom charges
   - y berfungsi menampilkan kolom charges
@@ -308,12 +327,17 @@ Metode StandarScaler dipilih karena:
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan.
 
 > [!NOTE]
-> Pada proyek ini, algoritma machine learning yang dipakai adalah K-Nearest Neighbor, Random Forest, Boosting Algorithm dan Support Vector Machine.
+> Pada proyek ini, algoritma machine learning yang dipakai adalah _K-Nearest Neighbor_, _Random Forest_, _Boosting Algorithm_ dan _Support Vector Machine_.
+> Alasan Pemilihan Model:
+> - _KNN_ dapat digunakan untuk menyelesaikan masalah klasifikasi dan regresi, sesuai dengan kebutuhan analisis.
+> - _RF_ merupakan model yang memiliki akurasi dan stabilitasnya dalam menangani berbagai masalah klasifikasi dan regresi.
+> - _AdaBoost_ dapat menghasilkan model dengan akurasi yang sangat tinggi.
+> - _SVM_ menggunakan memori yang lebih sedikit dibandingkan model lain seperti _Random Forest_.
 
-**Model Development dengan K-Nearest Neighbor**
-KNN bekerja dengan membandingkan jarak satu sampel ke sampel pelatihan lain dengan memilih sejumlah k tetangga terdekat (dengan k adalah sebuah angka positif). Nah, itulah mengapa algoritma ini dinamakan K-nearest neighbor (sejumlah k tetangga terdekat). KNN bisa digunakan untuk kasus klasifikasi dan regresi.
+**Model Development dengan _K-Nearest Neighbor_**
+_KNN_ bekerja dengan membandingkan jarak satu sampel ke sampel pelatihan lain dengan memilih sejumlah k tetangga terdekat (dengan k adalah sebuah angka positif). Nah, itulah mengapa algoritma ini dinamakan _K-nearest neighbor_ (sejumlah k tetangga terdekat). _KNN_ bisa digunakan untuk kasus klasifikasi dan regresi.
 
-**Kelebihan & Kekurangan KNN**
+**Kelebihan & Kekurangan _KNN_**
 
 `Kelebihan`
 - Mudah dipahami dan diimplementasikan.
@@ -325,10 +349,16 @@ KNN bekerja dengan membandingkan jarak satu sampel ke sampel pelatihan lain deng
 - Kinerja menurun pada data dengan dimensi tinggi.
 - Membutuhkan waktu komputasi yang lama untuk data yang besar.
 
-**Model Development dengan Random Forest**
-Algoritma random forest adalah salah satu algoritma supervised learning. Ia dapat digunakan untuk menyelesaikan masalah klasifikasi dan regresi. Random forest juga merupakan algoritma yang sering digunakan karena cukup sederhana tetapi memiliki stabilitas yang mumpuni.
+`Tahapan dan Parameter:`
 
-**Kelebihan & Kekurangan Random Forest**
+1. Praproses data: Normalisasi data untuk memastikan semua fitur memiliki skala yang sama.
+2. Pemilihan nilai K: Menentukan nilai K yang optimal melalui proses tuning. Nilai K yang dipilih adalah 5.
+3. Klasifikasi data: Menerapkan algoritma _KNN_ dengan nilai K=5 untuk mengklasifikasikan data baru.
+
+**Model Development dengan _Random Forest_**
+Algoritma _Random forest_ adalah salah satu algoritma supervised learning. Ia dapat digunakan untuk menyelesaikan masalah klasifikasi dan regresi. _Random forest_ juga merupakan algoritma yang sering digunakan karena cukup sederhana tetapi memiliki stabilitas yang mumpuni.
+
+**Kelebihan & Kekurangan _RF_**
 
 `Kelebihan`
 - Akurat dan robust.
@@ -340,10 +370,16 @@ Algoritma random forest adalah salah satu algoritma supervised learning. Ia dapa
 - Membutuhkan waktu training yang lama.
 - Sensitif terhadap hyperparameter tuning.
 
-**Model Development dengan Boosting Algorithm**
-Algoritma yang menggunakan teknik boosting bekerja dengan membangun model dari data latih. Kemudian ia membuat model kedua yang bertugas memperbaiki kesalahan dari model pertama. Model ditambahkan sampai data latih terprediksi dengan baik atau telah mencapai jumlah maksimum model untuk ditambahkan. Pada kasus ini, kita akan menggunakan metode adaptive boosting.
+`Tahapan dan Parameter:`
 
-**Kelebihan & Kekurangan AdaBOOST**
+1. Praproses data: Normalisasi data untuk memastikan semua fitur memiliki skala yang sama.
+2. Tuning hyperparameter: Menentukan nilai hyperparameter optimal seperti jumlah pohon (n_estimators) dan kedalaman pohon (max_depth) melalui proses tuning.
+3. Klasifikasi data: Menerapkan algoritma _Random Forest_ dengan hyperparameter yang optimal untuk mengklasifikasikan data baru.
+
+**Model Development dengan _Boosting Algorithm_**
+Algoritma yang menggunakan teknik _Boosting_ bekerja dengan membangun model dari data latih. Kemudian ia membuat model kedua yang bertugas memperbaiki kesalahan dari model pertama. Model ditambahkan sampai data latih terprediksi dengan baik atau telah mencapai jumlah maksimum model untuk ditambahkan.
+
+**Kelebihan & Kekurangan _AdaBOOST_**
 
 `Kelebihan`
 - Akurat dan dapat menangani data yang kompleks.
@@ -355,10 +391,16 @@ Algoritma yang menggunakan teknik boosting bekerja dengan membangun model dari d
 - Sensitif terhadap outlier.
 - Membutuhkan waktu training yang lama.
 
-**Model Development dengan Support Vector Machine (SVM)**
+`Tahapan dan Parameter:`
+
+1. Praproses data: Normalisasi data untuk memastikan semua fitur memiliki skala yang sama.
+2. Tuning hyperparameter: Menentukan nilai hyperparameter optimal seperti jumlah iterasi (n_estimators) dan learning rate melalui proses tuning.
+3. Klasifikasi data: Menerapkan algoritma _Boosting_ seperti _AdaBoost_ dengan hyperparameter yang optimal untuk mengklasifikasikan data baru.
+
+**Model Development dengan _Support Vector Machine_ (SVM)**
 Tujuan dari algoritma SVM adalah untuk menemukan hyperplane terbaik dalam ruang berdimensi-N (ruang dengan N-jumlah fitur) yang berfungsi sebagai pemisah yang jelas bagi titik-titik data input.
 
-**Kelebihan & Kekurangan SVM**
+**Kelebihan & Kekurangan _SVM_**
 
 `Kelebihan`
 - Akurat dan robust.
@@ -370,19 +412,22 @@ Tujuan dari algoritma SVM adalah untuk menemukan hyperplane terbaik dalam ruang 
 Membutuhkan waktu training yang lama untuk data yang besar.
 Sensitif terhadap outlier dan noise.
 
+`Tahapan dan Parameter:`
+
+1. Praproses data: Normalisasi data dan scaling data untuk memastikan semua fitur memiliki skala yang sama.
+2. Pemilihan kernel: Menentukan kernel yang tepat seperti linear kernel atau Gaussian kernel.
+3. Tuning hyperparameter: Menentukan nilai hyperparameter optimal seperti regularization parameter (C) dan gamma melalui proses tuning.
+4. Klasifikasi data: Menerapkan algoritma SVM dengan hyperparameter yang optimal untuk mengklasifikasikan data baru.
+
 **Pemilihan Model::**
-Pemilihan parameter yang optimal untuk setiap algoritma sangat penting untuk mencapai performa terbaik. Dari keempat model yang telah dilatih, terlihat bahwa prediksi dengan K-Nearest Neighbor memberikan hasil yang paling mendekati. Sehingga **K-Nearest Neighbor** merupakan model terbaik yang dihasilkan. Hal ini didasarkan pada hasil uji pada gambar berikut:
-
-![Visualisasi bar chart MSE](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/fcb330e2-6413-41db-a7fa-f6538908847c)
-
-**_Gambar 13. Visualisasi bar chart MSE_**
+Pemilihan parameter yang optimal untuk setiap algoritma sangat penting untuk mencapai performa terbaik. Dari keempat model yang telah dilatih, prediksi dengan _K-Nearest Neighbor_ memberikan hasil yang paling mendekati. Sehingga **_K-Nearest Neighbor_** merupakan model terbaik yang dihasilkan.
 
 ## Evaluation
 Sebelum model diterapkan, model perlu dievaluasi agar terbukti cocok untuk tujuan yang telah ditentukan. Fase ini bertujuan untuk memastikan bahwa model akan mampu membuat prediksi yang akurat dan tidak mengalami overfitting atau underfitting.
 
 Mengevaluasi model regresi sebenarnya relatif sederhana. Secara umum, hampir semua metrik adalah sama. Jika prediksi mendekati nilai sebenarnya, performanya baik. Sedangkan jika tidak, performanya buruk. Secara teknis, selisih antara nilai sebenarnya dan nilai prediksi disebut eror. Maka, semua metrik mengukur seberapa kecil nilai eror tersebut.
 
-Metrik yang akan kita gunakan pada prediksi ini adalah MSE atau Mean Squared Error yang menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi. Mean Squared Error (MSE) adalah metrik yang digunakan untuk mengukur ketepatan model regresi dalam memprediksi nilai target. MSE menghitung rata-rata dari kuadrat perbedaan antara nilai prediksi dan nilai target yang sebenarnya.
+Metrik yang akan akan digunakan pada prediksi ini adalah MSE atau Mean Squared Error yang menghitung jumlah selisih kuadrat rata-rata nilai sebenarnya dengan nilai prediksi. Mean Squared Error (MSE) adalah metrik yang digunakan untuk mengukur ketepatan model regresi dalam memprediksi nilai target. MSE menghitung rata-rata dari kuadrat perbedaan antara nilai prediksi dan nilai target yang sebenarnya.
 
 Nilai MSE memiliki beberapa signifikansi, antara lain:
 - Akurasi Prediksi: Nilai MSE yang rendah menunjukkan bahwa model mampu memprediksi nilai target dengan lebih akurat.
@@ -391,9 +436,7 @@ Nilai MSE memiliki beberapa signifikansi, antara lain:
 
 MSE didefinisikan dalam persamaan berikut
 
-![Perhitungan MSE](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/d270e4f2-d9ca-49f9-8658-e6d3a95476e7)
-
-**_Gambar 14. Perhitungan MSE_**
+$$\text{MSE} = \frac{1}{N} \sum_{i=1}^N \left( y_i - \text{ypred}_i \right)^2$$
 
 _Keterangan:_
 
@@ -413,26 +456,26 @@ Hasil evaluasi pada data latih dan data test adalah sebagai berikut.
 | Boosting | 3.795002 | 4.343941 |
 | SVM | 49.703125 | 46.693444 |
 
-Untuk memudahkan, mari kita plot matrik tersebut dengan bar chart
+Untuk memudahkan, gunakan plot matrik tersebut dengan bar chart
 
 ![Visualisasi bar chart MSE](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/f84f41a2-f667-4cac-980d-153771b5fc7b)
 
 **_Gambar 15. Visualisasi bar chart MSE_**
 
-Dari gambar di atas , terlihat bahwa, model Random Forest (RF) memiliki nilai error pada data test yang paling kecil sedangkan model Support Vector Machine memiliki nilai error paling banyak dibandingkan dari ketiga model. Hal ini menunjukkan bahwa RF mampu memprediksi nilai target dengan lebih akurat dibandingkan dengan model lain.
+Dari gambar di atas , terlihat bahwa, model _Random Forest (RF)_ memiliki nilai error pada data test yang paling kecil sedangkan model _Support Vector Machine_ memiliki nilai error paling banyak dibandingkan dari ketiga model. Hal ini menunjukkan bahwa RF mampu memprediksi nilai target dengan lebih akurat dibandingkan dengan model lain.
 
-Untuk mengujinya, mari kita buat prediksi menggunakan beberapa harga dari data test.
+Untuk mengujinya, buat prediksi menggunakan beberapa harga dari data test.
 
 **_Tabel 4. Hasil Prediksi MSE_**
 | x | y_true	 | prediksi_KNN | prediksi_RF | prediksi_Boosting | prediksi_SVM |
 | --- | --- | --- | --- | --- | --- |
 | 131 | 580.419 | 581.1 | 582.2 | 573.0 | 303.2 |
 
-Pada Tabel 4 adalah hasil prediksi "Total" dari 4 algoritma yaitu K-Nearest Neighbor, Random Forest, AdaBOOST dan Support Vector Machine. Terlihat bahwa prediksi dengan Random Forest(RF) dan K-Nearest Neighbor memberikan hasil yang paling mendekati. Dimana algoritma K-Nearest Neighbor memiliki nilai prediksi MSE (Mean Squared Error) sebesar 581.1, algoritma Random Forest memiliki nilai prediksi MSE (Mean Squared Error) sebesar 582.2, algoritma AdaBOOST memiliki nilai prediksi MSE (Mean Squared Error) sebesar 573.0 sedangkan algoritma Support Vector Machine memiliki nilai prediksi MSE (Mean Squared Error) sebesar 303.2.
+Pada Tabel 4 adalah hasil prediksi "Total" dari 4 algoritma yaitu _K-Nearest Neighbor_, _Random Forest_, _AdaBOOST_ dan _Support Vector Machine_. Terlihat bahwa prediksi dengan _Random Forest_ dan _K-Nearest Neighbor_ memberikan hasil yang paling mendekati. Dimana algoritma _K-Nearest Neighbor_ memiliki nilai prediksi _MSE_ (Mean Squared Error) sebesar 581.1, algoritma _Random Forest_ memiliki nilai prediksi _MSE_ (Mean Squared Error) sebesar 582.2, algoritma _AdaBOOST_ memiliki nilai prediksi _MSE_ (Mean Squared Error) sebesar 573.0 sedangkan algoritma _Support Vector Machine_ memiliki nilai prediksi _MSE_ (Mean Squared Error) sebesar 303.2.
 
 **Kesimpulan**
 
-Dari Empat model Algoritma yang dikembangkan berdasarkan hasil perbandingan dan visualisasi, dapat disimpulkan bahwa model Random Forest merupakan model terbaik dengan nilai error terkecil pada data test. Model K-Nearest Neighbor memberikan hasil yang mendekati, namun RF lebih unggul dalam hal akurasi.
+Dari Empat model Algoritma yang dikembangkan berdasarkan hasil perbandingan dan visualisasi, dapat disimpulkan bahwa model _Random Forest_ merupakan model terbaik dengan nilai error terkecil pada data test. Model _K-Nearest Neighbor_ memberikan hasil yang mendekati, namun RF lebih unggul dalam hal akurasi.
 
 Beberapa faktor yang dapat menyebabkan perbedaan antara nilai prediksi dan nilai sebenarnya, antara lain:
 - Kompleksitas model: Model yang terlalu kompleks dapat overfit data dan menghasilkan prediksi yang tidak akurat.
