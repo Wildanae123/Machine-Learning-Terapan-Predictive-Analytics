@@ -22,9 +22,9 @@ Berdasarkan uraian yang telah dipaparkan pada latar belakang diatas, maka dapat 
 ### Goals
 Berdasarkan rumusan masalah yang telah dipaparkan di atas, maka proyek penelitian ini memiliki tujuan, yaitu:
 
-- Mengetahui model algoritma machine learning dalam memanfaatkan data pelanggan secara efektif untuk mengetahui hubungan antara optimalisasi proses bisnis pelayanan dan ekspektasi pelanggan.
-- Mengetahui model pengembangan model machine learning dalam optimalisasi proses bisnis untuk memaksimalkan efisiensi dan profitabilitas.
-- Mengetahui hasil evaluasi model machine learning dalam membantu para peritel memanfaatkan data untuk pengambilan keputusan strategis.
+- Mengetahui penerapan model algoritma machine learning dalam memanfaatkan data pelanggan secara efektif untuk mengetahui hubungan antara optimalisasi proses bisnis pelayanan dan ekspektasi pelanggan.
+- Mengetahui proses model pengembangan model machine learning dapat memaksimalkan hasil dalam optimasi proses bisnis dan layanan berdasarkan prediksi pola dan korelasi di masa depan.
+- Mengetahui hasil evaluasi model machine learning memiliki akurasi yang tinggi dalam memprediksi pengambilan keputusan strategis untuk membantu para peritel.
 
 ### Solution statements
 Berdasarkan tujuan yang telah dipaparkan diatas, maka proyek penelitian ini memiliki solusi atau tahapan sebagai berikut:
@@ -475,15 +475,10 @@ Pada Tabel 4 adalah hasil prediksi "Total" dari 4 algoritma yaitu _K-Nearest Nei
 
 **Kesimpulan**
 
-Dari Empat model Algoritma yang dikembangkan berdasarkan hasil perbandingan dan visualisasi, dapat disimpulkan bahwa model _Random Forest_ merupakan model terbaik dengan nilai error terkecil pada data test. Model _K-Nearest Neighbor_ memberikan hasil yang mendekati, namun RF lebih unggul dalam hal akurasi.
-
-Beberapa faktor yang dapat menyebabkan perbedaan antara nilai prediksi dan nilai sebenarnya, antara lain:
-- Kompleksitas model: Model yang terlalu kompleks dapat overfit data dan menghasilkan prediksi yang tidak akurat.
-- Kualitas data: Data yang tidak akurat atau tidak lengkap dapat menyebabkan prediksi yang tidak akurat.
-- Variabilitas data: Data yang sangat bervariasi dapat membuat model sulit untuk memprediksi nilai target dengan tepat.
-- Algoritma yang digunakan: Algoritma yang berbeda memiliki kekuatan dan kelemahannya masing-masing, dan beberapa algoritma mungkin lebih cocok untuk data tertentu daripada yang lain.
+Berdasarkan hasil evaluasi, proyek ini **berhasil** dalam mencapai tujuannya untuk mengembangkan model machine learning yang dapat membantu para peritel dalam optimasi proses bisnis dan layanan untuk meningkatkan kepuasan pelanggan. Dari keempat model Algoritma yang dikembangkan berdasarkan hasil perbandingan dan visualisasi, dapat disimpulkan bahwa model _Random Forest_ merupakan model terbaik dengan nilai error terkecil pada data test. Meskipun model _K-Nearest Neighbor_ memberikan akurasi yang mendekati, namun RF lebih unggul dalam hal akurasi yang tinggi dan nilai error yang rendah.
 
 **Saran**
+Namun, masih ada beberapa area yang perlu diperbaiki untuk meningkatkan performa model dan efektivitasnya.
 
 - Melakukan tuning hyperparameter untuk meningkatkan performa model.
 - Mencoba model regresi lainnya untuk dibandingkan dengan model yang telah diuji.
