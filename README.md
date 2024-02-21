@@ -137,11 +137,20 @@ Missing Value dapat menjadi masalah dalam analisis data karena dapat menyebabkan
 - Penurunan akurasi dan keandalan hasil analisis
 - Kesulitan dalam interpretasi data
 
-![Missing value](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/fbefd553-1c63-4f92-9151-af505d7d8fc3)
+**Output Missing value**
 
-**_Gambar 1. Output Missing value_**
+```
+Branch           0
+Customer type    0
+Gender           0
+Product line     0
+Unit price       0
+Quantity         0
+Total            0
+Payment          0
+```
 
-Berdasarkan output pada gambar di atas dapat dilihat bahwa tidak ditemukannya missing value pada masing masing kolom di dataset.
+Berdasarkan output di atas dapat dilihat bahwa tidak ditemukannya missing value pada masing masing kolom di dataset.
   
 #### Outliers
 Adalah sampel yang nilainya sangat jauh dari cakupan umum data utama. outliers sendiri adalah hasil pengamatan yang kemunculannya sangat jarang dan berbeda dari data hasil pengamatan lainnya
@@ -155,7 +164,7 @@ Untuk mengecek apakah ada outliers atau tidak, dapat menggunakan teknik visualis
 
 ![Visualisasi boxplot](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/fdd7a17c-acba-498b-b32d-a87cf5d1a0cc)
 
-**_Gambar 2. Visualisasi boxplot_**
+**_Gambar 1. Visualisasi boxplot_**
 
 Penanganan Outliers
 Pada proyek ini , terdapat outliers variabel total, untuk menangani outliers gunakan teknik IQR method, IQR adalah singkatan dari Interquartile Range.
@@ -167,16 +176,14 @@ Batas atas = Q3 + 1.5 * IQR
 
 Menghasilkan output sebagai berikut:
 
-![Outliner](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/10f693a6-351a-44f8-bba5-3ca042bd4b43)
-
-**_Gambar 3. Outliner_**
+`(991, 9)`
 
 #### Memahami data dengan visualization menggunakan teknik Univariate Analysis
 ##### Categorical Features
 
 ![Univariate Analysis Categorical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/68e8038a-e0c0-4b22-9447-016f89f4f307)
 
-**_Gambar 4. Univariate Analysis Categorical Features_**
+**_Gambar 2. Univariate Analysis Categorical Features_**
 
 Berdasarkan deskripsi variabel di atas, bisa diperoleh beberapa informasi, antara lain:
 - Kategori branch dari yang paling banyak ke yang paling sedikit adalah A, B, dan C.
@@ -189,7 +196,7 @@ Berdasarkan deskripsi variabel di atas, bisa diperoleh beberapa informasi, antar
 
 ![Univariate Analysis Numerical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/ac77ce45-0b74-4bfc-8cda-868923dd8009)
 
-**_Gambar 5. Univariate Analysis Numerical Features_**
+**_Gambar 3. Univariate Analysis Numerical Features_**
 
 Berdasarkan histogram di atas, bisa diperoleh beberapa informasi, antara lain:
 
@@ -218,7 +225,7 @@ Berdasarkan histogram di atas, bisa diperoleh beberapa informasi, antara lain:
 
 ![Multivariate Analysis Categorical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/63f0fbef-e35b-43fe-8180-d860d003ef7c)
 
-**_Gambar 6. Multivariate Analysis Categorical Features_**
+**_Gambar 4. Multivariate Analysis Categorical Features_**
 
 Dengan mengamati rata-rata Total relatif terhadap fitur kategori di atas, dapat diperoleh insight sebagai berikut:
 
@@ -252,7 +259,7 @@ Dengan mengamati rata-rata Total relatif terhadap fitur kategori di atas, dapat 
 
 ![Multivariate Analysis Numerical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/d2d34e8e-9436-4ecd-8259-a603c15af2e1)
 
-**_Gambar 7. Multivariate Analysis Numerical Features_**
+**_Gambar 5. Multivariate Analysis Numerical Features_**
 
 Pada kasus ini, relasi antara semua fitur numerik dengan fitur target yaitu ‘Total’. Untuk membacanya, perhatikan fitur pada sumbu y, temukan fitur target ‘Total’, dan lihatlah grafik relasi antara semua fitur pada sumbu x dengan fitur price pada sumbu y. Dalam hal ini, dengan melihat relasi antar fitur numerik dengan fitur target ‘Total’ pada baris tersebut saja.
 
@@ -260,7 +267,7 @@ Pada pola sebaran data grafik pairplot sebelumnya, terlihat 'Quantity' memiliki 
 
 ![Correlation Matriks](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/c2ef09db-c51a-48e5-9b43-3762a637d0e5)
 
-**_Gambar 8. Correlation Matriks_**
+**_Gambar 6. Correlation Matriks_**
 
 Pada grafik korelasi di atas. Jika diamati, fitur 'Quantity' memiliki skor korelasi yang besar (di atas 0.1) dengan fitur target 'Total'. Artinya, fitur 'Quantity' berkorelasi tinggi dengan keempat fitur tersebut. Sementara itu, fitur 'Rating' memiliki korelasi yang sangat kecil (-0.04). Sehingga, fitur tersebut dapat di-drop.
 
@@ -291,9 +298,9 @@ Teknik PCA dipilih karena:
   - Kemampuan Interpretability: Teknik ini menghasilkan komponen utama yang mudah diinterpretasikan.
   - Kestabilan: Teknik ini stabil dan tidak sensitif terhadap outlier.
   
-  ![Hasil Reduksi](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/c7f7b291-fb12-43ad-b445-5d312f0613b3)
+  **Output Hasil Reduksi**
 
-  **_Gambar 9. Hasil Reduksi_**
+  `array([0.993, 0.007, 0.   ])`
   
 - Melakukan Data Splitting, membagi dataset menjadi data latih (train) dan data uji (test) merupakan hal yang harus dilakukan sebelum membuat model. Dengan mempertahankan sebagian data yang ada untuk menguji seberapa baik generalisasi model terhadap data baru. Ketahuilah bahwa setiap transformasi yang dilakukan pada data juga merupakan bagian dari model. Karena data uji (test set) berperan sebagai data baru, perlu dilakukan semua proses transformasi dalam data latih. Inilah alasan mengapa langkah awal adalah membagi dataset sebelum melakukan transformasi apa pun. Tujuannya adalah agar tidak mengotori data uji dengan informasi yang didapat dari data latih dengan parameter yang digunakan yaitu :
 
@@ -301,11 +308,16 @@ Teknik PCA dipilih karena:
   - y berfungsi menampilkan kolom charges
   - test_size adalah ukuran pembagian dataset yaitu sekitar 80 % untuk training dan 20 % untuk testing, data testing ini bertujuan untuk mengukur kinerja model pada data baru.
   - random_state: digunakan untuk mengontrol random number generator yang digunakan, di proyek ini menggunakan random_state = 123
+
+  **Output Hasil Data Splitting**
   
-  ![Hasil Data Splitting](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/fbf3c93c-997a-4d2c-b3b3-2e92465a8d20)
-
-  **_Gambar 10. Hasil Data Splitting_**
-
+  ```
+  X_train: 800 records data
+  y_train: 800 records data
+  X_test: 200 records data
+  y_test: 200 records data
+  ```
+  
 - Melakukan Standarisasi, Standarisasi adalah teknik transformasi yang paling umum digunakan dalam tahap persiapan pemodelan. Pada proyek ini, scaling data menggunakan metode standarisasi dengan teknik StandarScaler dari library Scikit learn, karena secara umum distribusi data berada pada kondisi normal dan standarisasi lebih cocok untuk digunakan dalam case yang seperti ini. StandardScaler menghasilkan distribusi dengan standar deviasi sama dengan 1 dan mean sama dengan 0.
 Metode StandarScaler dipilih karena:
 
@@ -460,7 +472,7 @@ Untuk memudahkan, gunakan plot matrik tersebut dengan bar chart
 
 ![Visualisasi bar chart MSE](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/f84f41a2-f667-4cac-980d-153771b5fc7b)
 
-**_Gambar 11. Visualisasi bar chart MSE_**
+**_Gambar 7. Visualisasi bar chart MSE_**
 
 Dari gambar di atas , terlihat bahwa, model _Random Forest (RF)_ memiliki nilai error pada data test yang paling kecil sedangkan model _Support Vector Machine_ memiliki nilai error paling banyak dibandingkan dari ketiga model. Hal ini menunjukkan bahwa RF mampu memprediksi nilai target dengan lebih akurat dibandingkan dengan model lain.
 
