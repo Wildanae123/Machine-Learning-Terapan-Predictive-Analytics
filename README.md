@@ -82,9 +82,19 @@ Link: [Supermarket sales](https://www.kaggle.com/datasets/aungpyaeap/supermarket
 - Gross income: Gross income
 - Rating: Customer stratification rating on their overall shopping experience (On a scale of 1 to 10)
 
-![Informasi dari dataset](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/0635564d-a07e-43a5-83b3-0890bf41a05c)
+**_Tabel 1. Informasi dari dataset_**
 
-**_Gambar 1. Informasi dari dataset_**
+| # |  Column |      Non-Null Count | Dtype  |
+| --- | --- | --- | --- |
+| 0 |  Branch        | 1000 non-null |  object  |
+| 1 |  Customer type | 1000 non-null |  object  |
+| 2 |  Gender        | 1000 non-null |  object  |
+| 3 |  Product line  | 1000 non-null |  object  |
+| 4 |  Unit price    | 1000 non-null |  float64 |
+| 5 |  Quantity      | 1000 non-null |  int64   |
+| 6 |  Total         | 1000 non-null |  float64 |
+| 7 |  Payment       | 1000 non-null |  object  |
+| 8 |  Rating        | 1000 non-null |  float64 |
 
 Berdasarkan pada gambar di atas, dapat diketahui bahwa :
 * Terdapat 4 kolom dengan tipe objek yaitu : Customer type, Gender, Product line, dan Payment. kolom ini merupakan  _categorical features_ (fitur non-numerik).
@@ -92,6 +102,47 @@ Berdasarkan pada gambar di atas, dapat diketahui bahwa :
 * Terdapat 3 kolom bertipe numerik dengan tipe data float64 yaitu Unit price, Total dan Rating. Kolom Total akan dijadikan kolom target pada proyek ini.
 
 ### Visualisasi data atau Exploratory Data Analysis
+
+#### Memahami data dengan statistics
+
+**_Tabel 4. Deskripsi Variabel_**
+
+| | count |	mean | std | min | 25% | 50% | 75% | max |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| Unit price	| 1000.0	| 55.672130	| 26.494628	| 10.0800	| 32.875000	| 55.230	| 77.93500	| 99.96 |
+| Quantity	| 1000.0	| 5.510000	| 2.923431	| 1.0000	| 3.000000	| 5.000	| 8.00000	| 10.00 |
+| Total	| 1000.0	| 322.966749	| 245.885335 |	10.6785	| 124.422375 |	253.848 |	471.35025	| 1042.65 |
+| Rating	| 1000.0	| 6.972700 | 1.718580	| 4.0000 | 5.500000 |	7.000	| 8.50000	| 10.00 |
+
+
+Fungsi describe() memberikan informasi statistik pada masing-masing kolom, antara lain:
+- Count  adalah jumlah sampel pada data.
+- Mean adalah nilai rata-rata.
+- Std adalah standar deviasi.
+- Min yaitu nilai minimum setiap kolom. 
+- 25% adalah kuartil pertama. Kuartil adalah nilai yang menandai batas interval dalam empat bagian sebaran yang sama. 
+- 50% adalah kuartil kedua, atau biasa juga disebut median (nilai tengah).
+- 75% adalah kuartil ketiga.
+- Max adalah nilai maksimum.
+
+#### Mencari Missing value
+Missing Value, atau nilai yang hilang, adalah data yang tidak tersedia untuk suatu variabel dalam suatu dataset. Hal ini dapat terjadi karena berbagai alasan, seperti:
+
+- Kesalahan dalam proses pengumpulan data
+- Ketidaklengkapan informasi yang tersedia
+- Adanya data yang tidak valid
+
+Missing Value dapat menjadi masalah dalam analisis data karena dapat menyebabkan:
+
+- Penurunan akurasi dan keandalan hasil analisis
+- Kesulitan dalam interpretasi data
+
+![Missing value](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/fbefd553-1c63-4f92-9151-af505d7d8fc3)
+
+**_Gambar 5. Output Missing value_**
+
+Berdasarkan output pada gambar di atas dapat dilihat bahwa tidak ditemukannya missing value pada masing masing kolom di dataset.
+  
 #### Outliers
 Adalah sampel yang nilainya sangat jauh dari cakupan umum data utama. outliers sendiri adalah hasil pengamatan yang kemunculannya sangat jarang dan berbeda dari data hasil pengamatan lainnya
 
@@ -120,26 +171,10 @@ Menghasilkan output sebagai berikut:
 
 **_Gambar 3. Outliner_**
 
-#### Memahami data dengan statistics
-
-![Deskripsi Variabel](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/704f9204-e5d5-465e-b8d0-f08f05e79247)
-
-**_Gambar 4. Deskripsi Variabel_**
-
-Fungsi describe() memberikan informasi statistik pada masing-masing kolom, antara lain:
-- Count  adalah jumlah sampel pada data.
-- Mean adalah nilai rata-rata.
-- Std adalah standar deviasi.
-- Min yaitu nilai minimum setiap kolom. 
-- 25% adalah kuartil pertama. Kuartil adalah nilai yang menandai batas interval dalam empat bagian sebaran yang sama. 
-- 50% adalah kuartil kedua, atau biasa juga disebut median (nilai tengah).
-- 75% adalah kuartil ketiga.
-- Max adalah nilai maksimum.
-
 #### Memahami data dengan visualization menggunakan teknik Univariate Analysis
 ##### Categorical Features
 
-![Univariate Analysis Categorical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/e93d1f0b-0aad-498a-9593-38dd7907d4fe)
+![Univariate Analysis Categorical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/68e8038a-e0c0-4b22-9447-016f89f4f307)
 
 **_Gambar 5. Univariate Analysis Categorical Features_**
 
@@ -156,12 +191,27 @@ Berdasarkan deskripsi variabel di atas, kita bisa memperoleh beberapa informasi,
 
 **_Gambar 6. Univariate Analysis Numerical Features_**
 
-Mari amati histogram di atas, khususnya histogram untuk variabel "Total" yang merupakan fitur target (label) pada data kita, kita bisa memperoleh beberapa informasi, antara lain:
+Berdasarkan histogram di atas, bisa diperoleh beberapa informasi, antara lain:
 
-- Peningkatan harga barang sebanding dengan penurunan jumlah sampel, Hal ini dapat kita lihat jelas dari histogram "Total" yang grafiknya mengalami penurunan seiring dengan semakin banyaknya jumlah sampel (sumbu x).
-- Rentang harga barang yang dibeli per pelanggan cukup tinggi yaitu dari skala 0 hingga 1000
-- Setengah harga barang dibeli di bawah harga 200.
-- Distribusi Total miring ke kanan (right-skewed). Hal ini akan berimplikasi pada model.
+- Histogram untuk variabel **"Unit price"**, antara lain:
+  - Jumlah harga setiap produk terjual memiliki rentang antara 10 hingga 34.
+  - Terdapat beberapa produk dengan harga tertentu memiliki jumlah pembelian yang jauh lebih tinggi.
+  - Distribusi Unit price sangat beragam dan cenderung tidak rata.
+
+- Histogram untuk variabel **"Quantity"**, antara lain:
+  - Rentang jumlah pemesanan barang yang dibeli mulai dari terendah 85 hingga tertinggi 119.
+  - Distribusi Quantity lebih simetris.
+
+- Histogram untuk variabel **"Total"** yang merupakan fitur target (label) pada data yang nanti akan dilakukan prediksi, antara lain:
+  - Peningkatan harga barang sebanding dengan penurunan jumlah sampel, Hal ini dapat kita lihat jelas dari histogram "Total" yang grafiknya mengalami penurunan seiring dengan semakin banyaknya jumlah sampel (sumbu x).
+  - Rentang harga barang termasuk pajak yang dibeli per pelanggan mulai dari terendah 10.6785 hingga tertinggi 1042.65.
+  - Setengah harga barang dibeli di bawah harga 200.
+  - Distribusi Total miring ke kanan (right-skewed). Hal ini akan berimplikasi pada model dimana data lebih terkonsentrasi pada satu sisi mean dibandingkan sisi lainnya yang dapat memengaruhi akurasi dan interpretasi model.
+
+- Histogram untuk variabel **"Rating"**, antara lain:
+  - Beberapa produk memiliki rating yang tinggi di atas 7.
+  - Rentang rating dari yang rendah antara 4 hingga tertinggi 10.
+  - Distribusi Rating sangat beragam dan cenderung tidak rata.
 
 #### Memahami data dengan visualization menggunakan teknik Multivariate Analysis
 ##### Categorical Features
@@ -244,9 +294,15 @@ Metode StandarScaler dipilih karena:
   - Kemampuan Scaling: Teknik ini menghasilkan data dengan standar deviasi 1 dan mean 0, yang membantu meningkatkan performa algoritma machine learning.
   - Kestabilan: Teknik ini stabil dan tidak sensitif terhadap outlier.
 
-  ![Hasil Standarisasi](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/a052106e-58ba-4340-8db4-6b19350d0d7b)
-
-  **_Gambar 12. Hasil Standarisasi_**
+  **_Tabel 12. Hasil Standarisasi_**
+  
+  |  	| Unit price	| Quantity |
+  | --- | --- | --- |
+  | 512	| -0.052977	| 0.510116 |
+  | 685	| -0.248441	| -1.203120 |
+  | 997	| -0.899735	| -1.545767 |
+  | 927	| -0.606162	| 1.195410 |
+  | 376	| -0.766155	| 1.195410 |
 
 ## Modeling
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan.
