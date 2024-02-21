@@ -82,7 +82,7 @@ Link: [Supermarket sales](https://www.kaggle.com/datasets/aungpyaeap/supermarket
 - Gross income: Gross income
 - Rating: Customer stratification rating on their overall shopping experience (On a scale of 1 to 10)
 
-**_Tabel 1. Informasi dari dataset_**
+**_Tabel 2. Informasi dari dataset_**
 
 | # |  Column |      Non-Null Count | Dtype  |
 | --- | --- | --- | --- |
@@ -96,7 +96,7 @@ Link: [Supermarket sales](https://www.kaggle.com/datasets/aungpyaeap/supermarket
 | 7 |  Payment       | 1000 non-null |  object  |
 | 8 |  Rating        | 1000 non-null |  float64 |
 
-Berdasarkan pada gambar di atas, dapat diketahui bahwa :
+Berdasarkan pada tabel di atas, dapat diketahui bahwa :
 * Terdapat 4 kolom dengan tipe objek yaitu : Customer type, Gender, Product line, dan Payment. kolom ini merupakan  _categorical features_ (fitur non-numerik).
 * Terdapat 1 kolom bertipe numerik dengan tipe data int64 yaitu Quantity.
 * Terdapat 3 kolom bertipe numerik dengan tipe data float64 yaitu Unit price, Total dan Rating. Kolom Total akan dijadikan kolom target pada proyek ini.
@@ -105,7 +105,7 @@ Berdasarkan pada gambar di atas, dapat diketahui bahwa :
 
 #### Memahami data dengan statistics
 
-**_Tabel 4. Deskripsi Variabel_**
+**_Tabel 3. Deskripsi Variabel_**
 
 | | count |	mean | std | min | 25% | 50% | 75% | max |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -139,7 +139,7 @@ Missing Value dapat menjadi masalah dalam analisis data karena dapat menyebabkan
 
 ![Missing value](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/fbefd553-1c63-4f92-9151-af505d7d8fc3)
 
-**_Gambar 5. Output Missing value_**
+**_Gambar 1. Output Missing value_**
 
 Berdasarkan output pada gambar di atas dapat dilihat bahwa tidak ditemukannya missing value pada masing masing kolom di dataset.
   
@@ -176,7 +176,7 @@ Menghasilkan output sebagai berikut:
 
 ![Univariate Analysis Categorical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/68e8038a-e0c0-4b22-9447-016f89f4f307)
 
-**_Gambar 5. Univariate Analysis Categorical Features_**
+**_Gambar 4. Univariate Analysis Categorical Features_**
 
 Berdasarkan deskripsi variabel di atas, bisa diperoleh beberapa informasi, antara lain:
 - Kategori branch dari yang paling banyak ke yang paling sedikit adalah A, B, dan C.
@@ -189,7 +189,7 @@ Berdasarkan deskripsi variabel di atas, bisa diperoleh beberapa informasi, antar
 
 ![Univariate Analysis Numerical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/ac77ce45-0b74-4bfc-8cda-868923dd8009)
 
-**_Gambar 6. Univariate Analysis Numerical Features_**
+**_Gambar 5. Univariate Analysis Numerical Features_**
 
 Berdasarkan histogram di atas, bisa diperoleh beberapa informasi, antara lain:
 
@@ -218,7 +218,7 @@ Berdasarkan histogram di atas, bisa diperoleh beberapa informasi, antara lain:
 
 ![Multivariate Analysis Categorical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/63f0fbef-e35b-43fe-8180-d860d003ef7c)
 
-**_Gambar 7. Multivariate Analysis Categorical Features_**
+**_Gambar 6. Multivariate Analysis Categorical Features_**
 
 Dengan mengamati rata-rata Total relatif terhadap fitur kategori di atas, dapat diperoleh insight sebagai berikut:
 
@@ -252,7 +252,7 @@ Dengan mengamati rata-rata Total relatif terhadap fitur kategori di atas, dapat 
 
 ![Multivariate Analysis Numerical Features](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/d2d34e8e-9436-4ecd-8259-a603c15af2e1)
 
-**_Gambar 8. Multivariate Analysis Numerical Features_**
+**_Gambar 7. Multivariate Analysis Numerical Features_**
 
 Pada kasus ini, relasi antara semua fitur numerik dengan fitur target yaitu ‘Total’. Untuk membacanya, perhatikan fitur pada sumbu y, temukan fitur target ‘Total’, dan lihatlah grafik relasi antara semua fitur pada sumbu x dengan fitur price pada sumbu y. Dalam hal ini, dengan melihat relasi antar fitur numerik dengan fitur target ‘Total’ pada baris tersebut saja.
 
@@ -260,7 +260,7 @@ Pada pola sebaran data grafik pairplot sebelumnya, terlihat 'Quantity' memiliki 
 
 ![Correlation Matriks](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/c2ef09db-c51a-48e5-9b43-3762a637d0e5)
 
-**_Gambar 9. Correlation Matriks_**
+**_Gambar 8. Correlation Matriks_**
 
 Pada grafik korelasi di atas. Jika diamati, fitur 'Quantity' memiliki skor korelasi yang besar (di atas 0.1) dengan fitur target 'Total'. Artinya, fitur 'Quantity' berkorelasi tinggi dengan keempat fitur tersebut. Sementara itu, fitur 'Rating' memiliki korelasi yang sangat kecil (-0.04). Sehingga, fitur tersebut dapat di-drop.
 
@@ -274,7 +274,7 @@ Teknik One-Hot Encoding dipilih untuk alasan berikut:
   - Kompatibilitas: Teknik ini kompatibel dengan berbagai algoritma machine learning.
   - Kemampuan Interpretability: Teknik ini menghasilkan data yang mudah diinterpretasikan.
 
-  **_Tabel 2. Hasil Encoding_**
+  **_Tabel 4. Hasil Encoding_**
 
   |   | Unit price | Quantity |  Total  | Branch_A | Branch_B | Branch_C | Customer type_Member | Customer type_Normal | Gender_Female | Gender_Male |  Product line_Electronic accessories  | Product line_Fashion accessories | Product line_Food and beverages | Product line_Health and beauty | Product line_Home and lifestyle | Product line_Sports and travel | Payment_Cash | Payment_Credit card | Payment_Ewallet |
   |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
@@ -293,7 +293,7 @@ Teknik PCA dipilih karena:
   
   ![Hasil Reduksi](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/c7f7b291-fb12-43ad-b445-5d312f0613b3)
 
-  **_Gambar 10. Hasil Reduksi_**
+  **_Gambar 9. Hasil Reduksi_**
   
 - Melakukan Data Splitting, membagi dataset menjadi data latih (train) dan data uji (test) merupakan hal yang harus dilakukan sebelum membuat model. Dengan mempertahankan sebagian data yang ada untuk menguji seberapa baik generalisasi model terhadap data baru. Ketahuilah bahwa setiap transformasi yang dilakukan pada data juga merupakan bagian dari model. Karena data uji (test set) berperan sebagai data baru, perlu dilakukan semua proses transformasi dalam data latih. Inilah alasan mengapa langkah awal adalah membagi dataset sebelum melakukan transformasi apa pun. Tujuannya adalah agar tidak mengotori data uji dengan informasi yang didapat dari data latih dengan parameter yang digunakan yaitu :
 
@@ -304,7 +304,7 @@ Teknik PCA dipilih karena:
   
   ![Hasil Data Splitting](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/fbf3c93c-997a-4d2c-b3b3-2e92465a8d20)
 
-  **_Gambar 11. Hasil Data Splitting_**
+  **_Gambar 10. Hasil Data Splitting_**
 
 - Melakukan Standarisasi, Standarisasi adalah teknik transformasi yang paling umum digunakan dalam tahap persiapan pemodelan. Pada proyek ini, scaling data menggunakan metode standarisasi dengan teknik StandarScaler dari library Scikit learn, karena secara umum distribusi data berada pada kondisi normal dan standarisasi lebih cocok untuk digunakan dalam case yang seperti ini. StandardScaler menghasilkan distribusi dengan standar deviasi sama dengan 1 dan mean sama dengan 0.
 Metode StandarScaler dipilih karena:
@@ -313,7 +313,7 @@ Metode StandarScaler dipilih karena:
   - Kemampuan Scaling: Teknik ini menghasilkan data dengan standar deviasi 1 dan mean 0, yang membantu meningkatkan performa algoritma machine learning.
   - Kestabilan: Teknik ini stabil dan tidak sensitif terhadap outlier.
 
-  **_Tabel 12. Hasil Standarisasi_**
+  **_Tabel 5. Hasil Standarisasi_**
   
   |  	| Unit price	| Quantity |
   | --- | --- | --- |
@@ -448,7 +448,7 @@ _y_pred = nilai prediksi_
 
 Hasil evaluasi pada data latih dan data test adalah sebagai berikut.
 
-**_Tabel 3. Hasil Perhitungan MSE 4 Algoritma_**
+**_Tabel 6. Hasil Perhitungan MSE 4 Algoritma_**
 | | train | test |
 | ------------- | ------------- | ------------- |
 | KNN | 4.751774 | 6.166513 |
@@ -460,18 +460,18 @@ Untuk memudahkan, gunakan plot matrik tersebut dengan bar chart
 
 ![Visualisasi bar chart MSE](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/f84f41a2-f667-4cac-980d-153771b5fc7b)
 
-**_Gambar 15. Visualisasi bar chart MSE_**
+**_Gambar 11. Visualisasi bar chart MSE_**
 
 Dari gambar di atas , terlihat bahwa, model _Random Forest (RF)_ memiliki nilai error pada data test yang paling kecil sedangkan model _Support Vector Machine_ memiliki nilai error paling banyak dibandingkan dari ketiga model. Hal ini menunjukkan bahwa RF mampu memprediksi nilai target dengan lebih akurat dibandingkan dengan model lain.
 
 Untuk mengujinya, buat prediksi menggunakan beberapa harga dari data test.
 
-**_Tabel 4. Hasil Prediksi MSE_**
+**_Tabel 7. Hasil Prediksi MSE_**
 | x | y_true	 | prediksi_KNN | prediksi_RF | prediksi_Boosting | prediksi_SVM |
 | --- | --- | --- | --- | --- | --- |
 | 131 | 580.419 | 581.1 | 582.2 | 573.0 | 303.2 |
 
-Pada Tabel 4 adalah hasil prediksi "Total" dari 4 algoritma yaitu _K-Nearest Neighbor_, _Random Forest_, _AdaBOOST_ dan _Support Vector Machine_. Terlihat bahwa prediksi dengan _Random Forest_ dan _K-Nearest Neighbor_ memberikan hasil yang paling mendekati. Dimana algoritma _K-Nearest Neighbor_ memiliki nilai prediksi _MSE_ (Mean Squared Error) sebesar 581.1, algoritma _Random Forest_ memiliki nilai prediksi _MSE_ (Mean Squared Error) sebesar 582.2, algoritma _AdaBOOST_ memiliki nilai prediksi _MSE_ (Mean Squared Error) sebesar 573.0 sedangkan algoritma _Support Vector Machine_ memiliki nilai prediksi _MSE_ (Mean Squared Error) sebesar 303.2.
+Pada Tabel di atas adalah hasil prediksi "Total" dari 4 algoritma yaitu _K-Nearest Neighbor_, _Random Forest_, _AdaBOOST_ dan _Support Vector Machine_. Terlihat bahwa prediksi dengan _Random Forest_ dan _K-Nearest Neighbor_ memberikan hasil yang paling mendekati. Dimana algoritma _K-Nearest Neighbor_ memiliki nilai prediksi _MSE_ (Mean Squared Error) sebesar 581.1, algoritma _Random Forest_ memiliki nilai prediksi _MSE_ (Mean Squared Error) sebesar 582.2, algoritma _AdaBOOST_ memiliki nilai prediksi _MSE_ (Mean Squared Error) sebesar 573.0 sedangkan algoritma _Support Vector Machine_ memiliki nilai prediksi _MSE_ (Mean Squared Error) sebesar 303.2.
 
 **Kesimpulan**
 
