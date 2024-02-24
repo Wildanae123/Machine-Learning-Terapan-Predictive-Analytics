@@ -364,6 +364,13 @@ Pada bagian ini penerapan dan menyebutkan teknik data preparation yang dilakukan
 - **Data Merging**
 Dua kumpulan data, yang mewakili movies dan credits yang berkaitan (pemain dan kru), digabungkan melalui operasi penggabungan berdasarkan atribut judul yang cocok. Proses ini akan menciptakan informasi dalam satu kumpulan data yang berisi metadata movies dan credits.
 
+**_Tabel 5. Output Hasil Formating**
+| | budget	| genres	| homepage	| id	| keywords	| original_language	| original_title	| overview	| popularity	| production_companies	| ...	| runtime	| spoken_languages	| status	| tagline	| title	| vote_average	| vote_count	| movie_id	| cast	| crew |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 0	| 237000000	| [{"id": 28, "name": "Action"}, {"id": 12, "nam...	| http://www.avatarmovie.com/	                | 19995	    | [{"id": 1463, "name": "culture clash"}, {"id":...	| en	| Avatar	                                | In the 22nd century, a paraplegic Marine is di...	| 150.437577	| [{"name": "Ingenious Film Partners", "id": 289...	| ...	| 162.0	| [{"iso_639_1": "en", "name": "English"}, {"iso...	| Released	| Enter the World of Pandora.	                    | Avatar	                                | 7.2	| 11800	| 19995	    | [{"cast_id": 242, "character": "Jake Sully", "...	| [{"credit_id": "52fe48009251416c750aca23", "de... |
+| 1	| 300000000	| [{"id": 12, "name": "Adventure"}, {"id": 14, "...	| http://disney.go.com/disneypictures/pirates/	| 285	    | [{"id": 270, "name": "ocean"}, {"id": 726, "na...	| en	| Pirates of the Caribbean: At World's End	| Captain Barbossa, long believed to be dead, ha...	| 139.082615	| [{"name": "Walt Disney Pictures", "id": 2}, {"...	| ...	| 169.0	| [{"iso_639_1": "en", "name": "English"}]	        | Released	| At the end of the world, the adventure begins.	| Pirates of the Caribbean: At World's End	| 6.9	| 4500	| 285	    | [{"cast_id": 4, "character": "Captain Jack Spa...	| [{"credit_id": "52fe4232c3a36847f800b579", "de... |
+| 2	| 245000000	| [{"id": 28, "name": "Action"}, {"id": 12, "nam...	| http://www.sonypictures.com/movies/spectre/	| 206647	| [{"id": 470, "name": "spy"}, {"id": 818, "name...	| en	| Spectre	                                | A cryptic message from Bond’s past sends him o...	| 107.376788	| [{"name": "Columbia Pictures", "id": 5}, {"nam...	| ...	| 148.0	| [{"iso_639_1": "fr", "name": "Fran\u00e7ais"},...	| Released	| A Plan No One Escapes	                            | Spectre	                                | 6.3	| 4466	| 206647	| [{"cast_id": 1, "character": "James Bond", "cr...	| [{"credit_id": "54805967c3a36829b5002c41", "de... |
+
 **Output Hasil Merging**
 
 ```
@@ -385,7 +392,7 @@ Memilih hanya kolom yang akan diperlukan, seperti judul, genre, dan rating rata-
 Sort DataFrame berdasarkan `movie_id` .
 Mengurutkan DataFrame berdasarkan `movie_id` secara ascending akan dapat dengan cepat menemukan film tertentu sehingga memudahkan navigasi dan referensinya. Proses ini akan memfasilitasi pengindeksan dan pengambilan data untuk analisis dan pemodelan selanjutnya.
 
-**_Tabel 6. Output Hasil Sorting**
+**_Tabel 7. Output Hasil Sorting**
 | | movie_id	| vote_average	| id	| title	| genres |
 | --- | --- | --- | --- | --- | --- |
 | 3773	| 5	| 6.5	| 5	| Four Rooms	| [{"id": 80, "name": "Crime"}, {"id": 35, "name... |
@@ -395,7 +402,7 @@ Mengurutkan DataFrame berdasarkan `movie_id` secara ascending akan dapat dengan 
 - **Data Convertion**
 Konversi kolom genres yang diperlukan menjadi list di mana setiap elemen genres akan dipisahkan dari elemen lain pada baris tersebut. Kemudian konversi kolom genres menjadi tipe string dari tipe list. Mengonversinya menjadi tipe string kemungkinan akan menggabungkan kategori-kategori ini menjadi satu string.
 
-**_Tabel 6. Output Hasil Convertion**
+**_Tabel 8. Output Hasil Convertion**
 | | movie_id	| vote_average	| id	| title	| genres |
 | --- | --- | --- | --- | --- | --- |
 | 3773	| 5	| 6.5	| 5	| Four Rooms	| Crime Comedy |
@@ -405,7 +412,7 @@ Konversi kolom genres yang diperlukan menjadi list di mana setiap elemen genres 
 - **Data Formating**
 Membulatkan values pada kolom `vote_average` menjadi bilangan bulat. Misalnya, nilai 3,8 akan dibulatkan menjadi 4. Hal ini dapat berguna untuk visualisasi atau penyajian data dalam format yang lebih sederhana. 
 
-**_Tabel 6. Output Hasil Formating**
+**_Tabel 9. Output Hasil Formating**
 | | movie_id	| vote_average	| id	| title	| genres |
 | --- | --- | --- | --- | --- | --- |
 | 3773	| 5	| 7.0	| 5	| Four Rooms	| Crime Comedy |
@@ -432,6 +439,7 @@ Menghapus data duplikat yang identik dalam kumpulan data  Hal ini dapat terjadi 
 
 ### Perbedaan pada proses data preparation ada pada tahap akhir berikut :
 **_Content Based Filtering_**
+
 - **Data Convertion**
 Menyiapkan informasi dalam format yang sesuai untuk pemrosesan dengan mengambil tiga kolom tertentu, 'movie_id', 'title', dan 'genres', dari DataFrame bernama 'new_df'. Kemudian mengubah setiap kolom menjadi format daftar terpisah menggunakan metode tolist(). Terakhir, menghitung dan mencetak panjang setiap daftar agar dapat memastikan konsistensi dalam jumlah entri di ketiga kategori.
 
@@ -444,6 +452,7 @@ Menyiapkan informasi dalam format yang sesuai untuk pemrosesan dengan mengambil 
 ```
 
 **_Collaborative Filtering_**
+
 - **Data Encoding**
 Melakukan encoding pada 'user_ids' dan 'movie_id' yang berbeda menggunakan teknik Label Encoding dengan menetapkan bilangan bulat unik untuk setiap pengguna/film. Misalnya, pengguna dengan ID yang mirip mungkin memiliki selera yang sama, dan film dengan ID yang berurutan mungkin berasal dari genre yang sama.
 
@@ -461,6 +470,7 @@ encoded angka ke userID:  {0: 5, 1: 11, 2: 12, 3: 13, 4: 14,..., 4796: 426067, 4
 Tahapan ini membahas mengenai model machine learning yang digunakan untuk menyelesaikan permasalahan.
 
 **Model Development dengan _Content Based Filtering_**
+
 _Content Based Filtering_ (CBF) adalah salah satu teknik dalam Machine Learning yang digunakan untuk membangun model rekomendasi. Model CBF merekomendasikan item kepada pengguna berdasarkan kesamaan isi (content) item tersebut dengan item yang disukai pengguna sebelumnya.
 
 **Kelebihan & Kekurangan _Content Based Filtering_**
@@ -481,13 +491,90 @@ _Content Based Filtering_ (CBF) adalah salah satu teknik dalam Machine Learning 
 
 1. Pengumpulan data: Data tentang item yang akan direkomendasikan dikumpulkan. Data ini dapat berupa teks, gambar, video, atau jenis data lainnya. Data harus memiliki informasi tentang isi item, seperti genre film, topik artikel, atau deskripsi produk.
 2. Preprocessing data: Data yang dikumpulkan dibersihkan dan diubah menjadi format yang dapat diproses oleh algoritma machine learning. Ini termasuk langkah-langkah seperti menghapus noise, normalisasi data, dan konversi data ke format numerik.
-3. Ekstraksi fitur: Fitur yang relevan dari data diekstraksi. Fitur ini dapat berupa kata kunci, kategori, metadata, atau representasi lain dari isi item.
-4. Pemilihan algoritma: Algoritma CBF yang sesuai dipilih berdasarkan jenis data dan tujuan rekomendasi. Algoritma populer termasuk TF-IDF, Cosine similarity, dan Jaccard similarity.
-5. Pelatihan model: Model CBF dilatih pada data yang telah diproses. Model ini mempelajari hubungan antara fitur dan preferensi pengguna.
-6. Evaluasi model: Model CBF dievaluasi untuk memastikan keakuratan dan performanya. Ini dapat dilakukan dengan menggunakan metrik seperti precision, recall, dan F1-score.
-7. Penerapan model: Model CBF diterapkan pada sistem rekomendasi. Model ini digunakan untuk merekomendasikan item kepada pengguna berdasarkan kesamaan isi item dengan item yang disukai pengguna sebelumnya.
+
+
+3. Pemilihan algoritma: Algoritma CBF yang sesuai dipilih berdasarkan jenis data dan tujuan rekomendasi. Algoritma populer termasuk TF-IDF, Cosine similarity, dan Jaccard similarity.
+
+Algoritma yang digunakan pada kasus ini adalah **TF-IDF dan Cosine similarity**.
+
+**_TF-IDF_** (Term Frequency-Inverse Document Frequency) adalah sebuah metode untuk menghitung bobot kata dalam sebuah dokumen. Bobot ini menunjukkan seberapa penting kata tersebut dalam mewakili isi dokumen.
+
+**_Cosine Similarity_** adalah sebuah metode untuk mengukur kemiripan antara dua dokumen berdasarkan bobot kata-katanya.
+
+**Alasan memilih TF-IDF dan Cosine Similarity:**
+
+- Akurasi: TF-IDF dan Cosine Similarity umumnya memberikan hasil yang akurat dalam berbagai aplikasi NLP.
+- Efisiensi: TF-IDF dan Cosine Similarity adalah metode yang efisien dan dapat digunakan untuk memproses data dalam jumlah besar.
+- Interpretabilitas: Hasil TF-IDF dan Cosine Similarity mudah dipahami dan diinterpretasikan.
+
+**Kelebihan TF-IDF dan Cosine Similarity:**
+
+- Sederhana dan mudah diimplementasikan: TF-IDF dan Cosine Similarity adalah metode yang relatif sederhana dan mudah diimplementasikan.
+- Efektif untuk data teks: TF-IDF dan Cosine Similarity telah terbukti efektif untuk berbagai aplikasi pemrosesan bahasa alami (NLP) yang melibatkan data teks.
+- Fleksibel: TF-IDF dan Cosine Similarity dapat dikombinasikan dengan metode lain untuk meningkatkan kinerja.
+
+**Kekurangan TF-IDF dan Cosine Similarity:**
+
+- Sensitive terhadap noise: TF-IDF dan Cosine Similarity dapat sensitif terhadap noise dalam data teks.
+- Sparse data: TF-IDF dan Cosine Similarity dapat bekerja kurang optimal pada data yang sparse.
+- Dimensi data: TF-IDF dan Cosine Similarity dapat menghasilkan vektor dengan dimensi yang tinggi, yang dapat memperlambat proses komputasi.
+
+4. Pelatihan model: Model CBF dilatih pada data yang telah diproses. Model ini mempelajari hubungan antara fitur dan preferensi pengguna.
+
+Mengubah vektor tf-idf dalam bentuk matriks dengan fungsi todense()
+```
+matrix([[0.        , 0.        , 0.        , ..., 0.        , 0.        ,
+         0.        ],
+        [0.4954229 , 0.57326753, 0.        , ..., 0.        , 0.        ,
+         0.        ],
+        [0.        , 0.        , 0.7787053 , ..., 0.        , 0.        ,
+         0.        ],
+        ...,
+        [0.        , 0.        , 0.        , ..., 0.        , 0.        ,
+         0.        ],
+        [0.        , 0.        , 0.        , ..., 0.        , 0.        ,
+         0.        ],
+        [0.        , 0.        , 0.        , ..., 0.        , 0.        ,
+         0.        ]])
+```
+
+Menghitung cosine similarity pada matrix tf-idf
+
+```
+array([[1.        , 0.        , 0.        , ..., 0.        , 0.        ,
+        0.        ],
+       [0.        , 1.        , 0.        , ..., 0.        , 0.        ,
+        0.        ],
+       [0.        , 0.        , 1.        , ..., 0.        , 0.62738987,
+        0.        ],
+       ...,
+       [0.        , 0.        , 0.        , ..., 1.        , 0.        ,
+        0.        ],
+       [0.        , 0.        , 0.62738987, ..., 0.        , 1.        ,
+        0.        ],
+       [0.        , 0.        , 0.        , ..., 0.        , 0.        ,
+        1.        ]])
+```
+
+5. Evaluasi model: Model CBF dievaluasi untuk memastikan keakuratan dan performanya. Ini dapat dilakukan dengan menggunakan metrik seperti precision, recall, dan F1-score.
+6. Penerapan model: Model CBF diterapkan pada sistem rekomendasi. Model ini digunakan untuk merekomendasikan item kepada pengguna berdasarkan kesamaan isi item dengan item yang disukai pengguna sebelumnya.
+
+**_Tabel 10. Output Hasil System Rekomendasi**
+| | title	| genres |
+| --- | --- | --- |
+| 0	| Transformers: Revenge of the Fallen	| ScienceFiction Action Adventure |
+| 1	| John Carter	| Action Adventure ScienceFiction |
+| 2	| Star Trek	| ScienceFiction Action Adventure |
+| 3	| X-Men: First Class	| Action ScienceFiction Adventure |
+| 4	| Star Trek Into Darkness	| Action Adventure ScienceFiction |
+| 5	| Captain America: Civil War	| Adventure Action ScienceFiction |
+| 6	| Independence Day: Resurgence	| Action Adventure ScienceFiction |
+| 7	| Star Wars: Episode II - Attack of the Clones	| Adventure Action ScienceFiction |
+| 8	| Journey 2: The Mysterious Island	| Adventure Action ScienceFiction |
+| 9	| Iron Man 3	| Action Adventure ScienceFiction |
 
 **Model Development dengan _Collaborative Filtering_**
+
 Collaborative Filtering (CF) adalah salah satu teknik dalam Machine Learning yang digunakan untuk membangun model rekomendasi. Model CF merekomendasikan item kepada pengguna berdasarkan kesamaan perilaku pengguna lain.
 
 **Kelebihan & Kekurangan _Collaborative Filtering_**
@@ -509,9 +596,148 @@ Collaborative Filtering (CF) adalah salah satu teknik dalam Machine Learning yan
 1. Pengumpulan data: Data tentang interaksi pengguna dengan item dikumpulkan. Data ini dapat berupa rating, ulasan, pembelian, klik, atau interaksi lain.
 2. Preprocessing data: Data dibersihkan dan diubah menjadi format yang dapat diproses oleh algoritma machine learning. Ini termasuk langkah-langkah seperti normalisasi data, pengolahan data yang hilang, dan konversi data ke format numerik.
 3. Pemilihan algoritma: Algoritma CF yang sesuai dipilih berdasarkan jenis data, tujuan rekomendasi, dan preferensi developer. Algoritma populer termasuk User-based CF, Item-based CF, dan Matrix factorization.
+
+Algoritma yang digunakan pada kasus ini adalah **User-based CF**.
+
+**_User-based CF_** adalah sebuah teknik dalam sistem rekomendasi yang memprediksi preferensi pengguna berdasarkan kesamaan dengan pengguna lain. Sistem ini mengidentifikasi pengguna yang memiliki minat dan perilaku serupa dengan pengguna target, kemudian merekomendasikan item yang disukai oleh pengguna serupa tersebut.
+
+**Alasan memilih User-based CF:**
+
+- Lebih personal: User-based CF memberikan rekomendasi yang lebih personal karena mempertimbangkan kesamaan dengan pengguna lain.
+- Lebih adaptif terhadap perubahan selera: User-based CF dapat beradaptasi dengan cepat terhadap perubahan selera pengguna karena hanya mempertimbangkan rating terbaru.
+- Lebih mudah diimplementasikan: User-based CF lebih mudah diimplementasikan dibandingkan dengan Item-based CF dan Matrix Factorization.
+
+**Kelebihan User-based CF:**
+
+- Lebih mudah dipahami: Konsep User-based CF lebih mudah dipahami dibandingkan dengan algoritma CF lainnya.
+- Lebih interpretabel: Hasil rekomendasi dari User-based CF lebih mudah diinterpretasikan karena didasarkan pada kesamaan dengan pengguna lain.
+- Lebih efektif untuk data yang sparse: User-based CF dapat bekerja dengan baik pada data yang sparse, di mana terdapat banyak item yang belum dirating oleh pengguna.
+
+**Kekurangan User-based CF:**
+
+- Skalabilitas: User-based CF menjadi kurang skalabel ketika jumlah pengguna dan item dalam sistem meningkat.
+- Sparse data: User-based CF dapat memberikan rekomendasi yang kurang akurat ketika data rating sangat sparse.
+- Cold start problem: User-based CF sulit memberikan rekomendasi kepada pengguna baru yang belum memiliki banyak rating.
+
 4. Pelatihan model: Model CF dilatih pada data yang telah diproses. Model ini mempelajari pola interaksi pengguna dan item untuk membuat prediksi tentang item mana yang mungkin disukai pengguna.
+
+```
+[[ 596  596]
+ [3371 3372]
+ [2701 2702]
+ ...
+ [3091 3092]
+ [3770 3772]
+ [ 859  860]] [0.7 0.7 0.8 ... 0.4 0.5 0.7]
+```
+
 5. Evaluasi model: Model CF dievaluasi untuk memastikan keakuratan dan performanya. Metrik yang umum digunakan termasuk Mean Absolute Error (MAE), Root Mean Square Error (RMSE), dan Precision & Recall.
+
+![Metric Visualization](https://github.com/Wildanae123/Machine-Learning-Terapan-Predictive-Analytics/assets/104717412/8a9165ae-1932-480c-ba74-1342b5a6cd13)
+
+**_Gambar 1. Metric Visualization_**
+
+Berdasarkan visualisasi, pada proses training model didapatkan nilai error akhir sebesar sekitar 0.0315 dan error pada data validasi sebesar 0.1966
+
 6. Penerapan model: Model CF diterapkan pada sistem rekomendasi. Model ini digunakan untuk merekomendasikan item kepada pengguna berdasarkan prediksi yang dihasilkan.
+
+```
+Showing recommendations for users: 133575
+===========================
+Movie with high ratings from user
+--------------------------------
+The Velocity of Gary : 5.0
+--------------------------------
+Top 10 movie recommendation
+--------------------------------
+The Godfather : Drama Crime
+Schindler's List : Drama History War
+The Good, the Bad and the Ugly : Western
+The Green Mile : Fantasy Drama Crime
+Fight Club : Drama
+Modern Times : Drama Comedy
+One Man's Hero : Western Action Drama History
+Dancer, Texas Pop. 81 : Comedy Drama Family
+Stiff Upper Lips : Comedy
+Sardaarji :
+```
+
+## Evaluation
+
+Evaluasi dilakukan untuk mengukur sejauh mana performance atau kinerja dari model sistem rekomendasi. Pada proyek ini, evaluasi diukur menggunakan metriks evaluasi sesuai dengan pendekatan yang dipakai dalam pengembangan sistem rekomendasi.
+
+**Content-Based Filtering**
+
+_Rumus:_
+$$\text{Precision} = \frac{TP}{TP + FP}$$
+
+_Keterangan:_
+
+- _TP: True Positive (jumlah kasus positif yang diprediksi dengan benar)_
+- _FP: False Positive (jumlah kasus positif yang salah prediksi)_
+
+_Output:_
+```
+Precision: 0.3
+```
+_Rumus:_
+$$\text{Recall} = \frac{TP}{TP + N}$$
+
+_Keterangan:_
+
+- _TP: True Positive (jumlah kasus positif yang diprediksi dengan benar)_
+- _FP: False Positive (jumlah kasus positif yang salah prediksi)_
+- _N : Jumlah kasus positif aktual (berapapun prediksinya)_
+
+_Output:_
+```
+Recall: 0.08823529411764706
+```
+Rumus:
+$$\text{F1-score} = 2 * \frac{Recall * Precision}{Recall + Precision}$$
+
+_Output:_
+```
+F1-score: 0.13636363636363635
+```
+
+**Collaborative Filtering**
+
+_Rumus:_
+$$\text{MSE} = \frac{1}{N} \sum_{i=1}^N \left( y_i - \text{ypred}_i \right)^2$$
+
+_Keterangan:_
+
+- _N =  jumlah data_
+- _y_i = nilai sebenarnya ke-i_
+- _ypred_i = nilai prediksi ke-i_
+
+_Output:_
+```
+Mean Absolute Error (MAE): 1.7290978749262307
+```
+_Rumus:_
+$$\text{RMSE} = (\frac{\sum{}(y_i - \hat{y}_i)}{\text{n}})^{1/2}$$
+
+_Keterangan:_
+
+- _y  = nilai hasil observasi_
+- _ŷ  = nilai hasil prediksi_
+- _i  = urutan data pada database _
+- _n  = jumlah data_
+
+_Output:_
+```
+Root Mean Square Error (RMSE): 1.96600146116326
+```
+
+Berdasarkan hasil evaluasi di atas:
+
+Content-Based Filtering memiliki precision yang relatif rendah (0.3), yang mengindikasikan bahwa dari item-item yang diprediksi relevan, hanya 30% yang benar-benar relevan. Recall-nya juga rendah (0.088), yang menunjukkan bahwa dari item-item yang seharusnya diprediksi relevan, hanya 8.8% yang berhasil diprediksi dengan benar. F1-score-nya (0.136) juga rendah, mencerminkan keseimbangan antara precision dan recall yang tidak optimal.
+
+Collaborative Filtering memiliki Mean Absolute Error (MAE) sebesar 1.729 dan Root Mean Square Error (RMSE) sebesar 1.966. MAE dan RMSE yang rendah menunjukkan bahwa model Collaborative Filtering cenderung memiliki kesalahan prediksi yang lebih kecil dalam memperkirakan peringkat item oleh pengguna.
+
+Berdasarkan hasil evaluasi tersebut, Collaborative Filtering lebih unggul dalam memprediksi preferensi pengguna karena memiliki tingkat kesalahan yang lebih rendah daripada Content-Based Filtering. Oleh karena itu, dalam konteks ini, Collaborative Filtering dapat dianggap sebagai metode yang lebih baik.
 
 ## Conclusion
 
